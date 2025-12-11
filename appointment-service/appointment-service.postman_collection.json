@@ -1,0 +1,105 @@
+{
+  "info": {
+    "name": "Appointment Service",
+    "_postman_id": "d4c9b1e8-0000-4000-8000-000000000000",
+    "description": "Collection to test Appointment Service endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Appointment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"patientId\": \"patient123\",\n  \"doctorId\": \"doctor456\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/appointments",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "appointments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Appointment by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/appointments/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "appointments",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Appointments by PatientId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/appointments?patientId=patient123",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "appointments"
+          ],
+          "query": [
+            {
+              "key": "patientId",
+              "value": "patient123"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cancel Appointment",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/appointments/1/cancel",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "appointments",
+            "1",
+            "cancel"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "exec": [],
+        "type": "text/javascript"
+      }
+    }
+  ]
+}
